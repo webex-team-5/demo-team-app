@@ -21,4 +21,7 @@
   justify-content: center;
   gap: 1rem;
 }
+.footer {
+  background-color: rgb(168, 168, 168);
+}
 </style>

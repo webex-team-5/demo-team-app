@@ -66,8 +66,8 @@ export default {
   height: 200px;
 }
 #link img {
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  aspect-ratio: 1/1;
   background-color: rgb(215, 215, 215);
   border-radius: 250px;
 }
@@ -82,8 +82,5 @@ h4 {
 .after {
   opacity: 1;
   transition: 1s;
-}
-.footer {
-  background-color: rgb(216, 216, 216);
 }
 </style>

@@ -24,8 +24,6 @@
       <h4>Vueメモ</h4>
       <h4 v-bind:class="change">作成者：ゆい</h4>
     </div>
-
-    <router-view></router-view>
   </div>
 </template>
 

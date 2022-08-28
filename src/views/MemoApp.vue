@@ -1,11 +1,9 @@
 <template>
   <div class="memo-container">
     <!--イラスト左-->
-    <div class="irasutoA">
-      <div class="image1">
-        <img src="irasutoya1.png" />
-        <img src="irasutoya2.png" />
-      </div>
+    <div class="right">
+      <div class="image1"><img src="../assets/irasutoya1.png" /></div>
+      <div class="image2"><img src="../assets/irasutoya2.png" /></div>
     </div>
     <!--メモ-->
     <div class="memo-box">
@@ -41,10 +39,10 @@
     <!--イラスト右-->
     <div class="irasutoB">
       <div class="image3">
-        <img src="irasutoya3.png" />
+        <img src="../assets/irasutoya3.png" />
       </div>
       <div class="image4">
-        <img src="irasutoya4.png" />
+        <img src="../assets/irasutoya4.png" />
       </div>
     </div>
   </div>
@@ -88,6 +86,10 @@ export default {
 <style scoped>
 .memo-container {
   display: flex;
+  justify-content: center;
+}
+.memo-container img {
+  height: 200px;
 }
 .memo-list {
   padding-left: 5rem;

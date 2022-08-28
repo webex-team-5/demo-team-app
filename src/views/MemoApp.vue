@@ -1,28 +1,51 @@
 <template>
-  <div id="app" class="memo-list">
-    <h1>今日の買い物は？？</h1>
-    <ul class="memo-list__container">
-      <li v-for="(memo, index) in memos" v-bind:key="index" class="memo">
-        <div class="memo__checkbox">
-          <input type="checkbox" v-model="memo.isDone" />
+  <div class="memo-container">
+    <!--イラスト左-->
+    <div class="irasutoA">
+      <div class="image1">
+        <img src="irasutoya1.png" />
+        <img src="irasutoya2.png" />
+      </div>
+    </div>
+    <!--メモ-->
+    <div class="memo-box">
+      <div id="app" class="memo-list">
+        <h1>Vueメモ</h1>
+        <ul class="memo-list__container">
+          <li v-for="(memo, index) in memos" v-bind:key="index" class="memo">
+            <div class="memo__checkbox">
+              <input type="checkbox" v-model="memo.isDone" />
+            </div>
+            <div v-if="memo.isDone" class="memo__text memo__text--done">
+              {{ index }}:{{ memo.text }}
+            </div>
+            <div v-else class="memo__text">{{ index }}:{{ memo.text }}</div>
+            <button v-on:click="deleteMemo(index)" class="memo__delete">
+              削除
+            </button>
+          </li>
+        </ul>
+        <div class="add-memo-field">
+          <input
+            class="add-memo-field__input"
+            type="text"
+            v-model="inputMemo"
+            placeholder="忘れないように書いておきましょう😊"
+          />
+          <button class="add-memo-field__button" v-on:click="addMemo">
+            追加
+          </button>
         </div>
-        <div v-if="memo.isDone" class="memo__text memo__text--done">
-          {{ index }}:{{ memo.text }}
-        </div>
-        <div v-else class="memo__text">{{ index }}:{{ memo.text }}</div>
-        <button v-on:click="deleteMemo(index)" class="memo__delete">
-          削除
-        </button>
-      </li>
-    </ul>
-    <div class="add-memo-field">
-      <input
-        class="add-memo-field__input"
-        type="text"
-        v-model="inputMemo"
-        placeholder="今日買う物を記入してください"
-      />
-      <button class="add-memo-field__button" v-on:click="addMemo">追加</button>
+      </div>
+    </div>
+    <!--イラスト右-->
+    <div class="irasutoB">
+      <div class="image3">
+        <img src="irasutoya3.png" />
+      </div>
+      <div class="image4">
+        <img src="irasutoya4.png" />
+      </div>
     </div>
   </div>
 </template>
@@ -63,6 +86,9 @@ export default {
 </script>
 
 <style scoped>
+.memo-container {
+  display: flex;
+}
 .memo-list {
   padding-left: 5rem;
   padding-right: 5rem;
@@ -73,7 +99,9 @@ export default {
   margin-left: auto;
   margin-right: auto;
 }
-
+.memo-list h1 {
+  border-bottom: #a6bfa1 2px solid;
+}
 .memo-list__container {
   padding: 0;
 }
@@ -88,7 +116,7 @@ export default {
 
 .memo:hover {
   color: white;
-  background-color: #b23b61;
+  background-color: #a6bfa1;
 }
 
 .memo__text {
@@ -109,7 +137,7 @@ export default {
 }
 
 .memo__delete:hover {
-  background-color: #b2ae3b;
+  background-color: #6abe83;
   border-radius: 5px;
 }
 
@@ -130,7 +158,7 @@ export default {
 }
 
 .add-memo-field__button:hover {
-  background-color: #b2ae3b;
+  background-color: #f1ac9d;
   border-radius: 5px;
 }
 </style>
